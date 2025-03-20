@@ -6,7 +6,7 @@ Features
 The cowboy hat moves from left to right across the screen, continuously bouncing back and forth.
 The animation can be paused or resumed by clicking anywhere on the screen.
 
-Have a go, Cowgirl - Yee Honk Demo: https://cactusballs.github.io/Yee-Honk-2.0/
+Have a go, Cowgirl - Yee Honk Demo: https://cactusballs.github.io/Yee-Honk-2.0/](https://lottiejudge.github.io/Yee-Honk-2.0/
 
 ## How It Works
 
@@ -26,7 +26,7 @@ jQuery: Used for handling animations and DOM manipulation.
 ## Installation
 
 Clone the repository:
-git clone git@github.com:cactusballs/Yee-Honk-2.0.git
+git clone git@github.com:lottieJudge/Yee-Honk-2.0.git
 Install the dependencies:
 npm install
 Start the development server:
