@@ -1,5 +1,6 @@
 import {store, togglePause } from './redux/store.js';
 
+console.log('yeehonk2.js loaded');
 jQuery(document).ready(function($) {
   var width = $(document).width();
   var $idAnimate = $('#animate');
