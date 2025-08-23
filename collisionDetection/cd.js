@@ -8,13 +8,20 @@ function getRect(elem) {
 }
 
 function collisionDetection(hat, duck) {
+  const hatCenterX = hat.x + hat.width / 2;
+  const hatCenterY = hat.y + hat.height / 2; 
+
+  const headStart = duck.x + duck.width * 0.2;
+  const headEnd = duck.x + duck.width * 0.4;
+
   return (
-    hat.x < duck.x + duck.width &&
-    hat.x + hat.width > duck.x &&
-    hat.y < duck.y + duck.height &&
-    hat.y + hat.height > duck.y
+    hatCenterX >= headStart &&
+    hatCenterX <= headEnd &&
+    hatCenterY >= duck.y &&
+    hatCenterY <= duck.y + duck.height
   );
-}   
+}
+
 
 export function checkCollisionAndShow() {
   console.log('Checking collision..')
@@ -37,11 +44,8 @@ function showYeeHaw() {
     yeeHaw.style.top = '50%';
     yeeHaw.style.left = '50%';
     yeeHaw.style.transform = 'translate(-50%, -50%)';
-    yeeHaw.style.fontSize = '4em';
+    yeeHaw.style.fontSize = '8em';
     yeeHaw.style.color = '#fff';
-    yeeHaw.style.background = '#ff9be1';
-    yeeHaw.style.padding = '0.5em 1em';
-    yeeHaw.style.borderRadius = '1em';
     yeeHaw.style.zIndex = '1000';
     document.body.appendChild(yeeHaw);
   }
