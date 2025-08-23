@@ -1,5 +1,5 @@
 // using getBounding to understand where the duck is 
-document.addEventListener('DOMContentLoaded', function() {
+
 const hatElem = document.querySelector('#animate img');
 const duckElem = document.getElementById('duck');
 
@@ -16,7 +16,7 @@ function collisionDetection(hat, duck) {
   );
 }   
 
-function checkCollisionAndShow() {
+export function checkCollisionAndShow() {
   console.log('Checking collision..')
   const hatRect = getRect(hatElem);
   const duckRect = getRect(duckElem);
@@ -26,9 +26,6 @@ function checkCollisionAndShow() {
     hideYeeHaw();
   }
 }
-
-// Call this function repeatedly, e.g.:
-setInterval(checkCollisionAndShow, 100); // every 100ms
 
 function showYeeHaw() {
   let yeeHaw = document.getElementById('yee-haw');
@@ -55,5 +52,4 @@ function hideYeeHaw() {
   if (yeeHaw) yeeHaw.remove();
 }
 
-setInterval(checkCollisionAndShow, 100);
-});
+
