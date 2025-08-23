@@ -11,6 +11,7 @@ jQuery(document).ready(function($) {
         { left: width },
         500,
         function() {
+          checkCollisionAndShow();
           setTimeout(goLeft, 50);
         }
       );
@@ -23,6 +24,7 @@ jQuery(document).ready(function($) {
         { left: 0 },
         500,
         function() {
+          checkCollisionAndShow();
           setTimeout(goRight, 50);
         }
       );
@@ -35,6 +37,7 @@ jQuery(document).ready(function($) {
     const { isPaused } = store.getState().yeeHonk;
     if (isPaused) {
       $idAnimate.stop(); 
+      checkCollisionAndShow();
     } else {
       goRight(); 
     }
