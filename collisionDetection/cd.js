@@ -49,11 +49,14 @@ function showYeeHaw() {
     yeeHaw.style.zIndex = '1000';
     document.body.appendChild(yeeHaw);
   }
+  yeeHaw.onclick = hideYeeHaw;
+  yeeHawVisible = true;
 }
 
 function hideYeeHaw() {
   const yeeHaw = document.getElementById('yee-haw');
   if (yeeHaw) yeeHaw.remove();
+  yeeHawVisible = false;
 }
 
 
