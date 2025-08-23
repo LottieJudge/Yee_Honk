@@ -4,7 +4,7 @@ console.log('yeehonk2.js loaded');
 jQuery(document).ready(function($) {
   var width = $(document).width();
   var $idAnimate = $('#animate');
-  console.log('test')
+
   function goRight() {
     if (!store.getState().yeeHonk.isPaused) {
       $idAnimate.animate(
