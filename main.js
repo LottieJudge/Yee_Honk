@@ -7,6 +7,10 @@ jQuery(document).ready(function($) {
   var width = $(window).width();
   var $idAnimate = $('#animate');
 
+  $(window).resize(function() {
+    width = $(window).width();
+  });
+
   function goRight() {
     if (!store.getState().yeeHonk.isPaused) {
       $idAnimate.animate(
