@@ -1,4 +1,6 @@
 import {store, togglePause } from './redux/store.js';
+import './collisionDetection/cd.js';
+import { checkCollisionAndShow } from './collisionDetection/cd.js';
 
 console.log('yeehonk2.js loaded');
 jQuery(document).ready(function($) {
@@ -23,6 +25,7 @@ jQuery(document).ready(function($) {
         { left: 0 },
         500,
         function() {
+
           setTimeout(goRight, 50);
         }
       );
@@ -35,6 +38,7 @@ jQuery(document).ready(function($) {
     const { isPaused } = store.getState().yeeHonk;
     if (isPaused) {
       $idAnimate.stop(); 
+      checkCollisionAndShow();
     } else {
       goRight(); 
     }
