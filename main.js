@@ -4,7 +4,7 @@ import { checkCollisionAndShow } from './collisionDetection/cd.js';
 
 console.log('yeehonk2.js loaded');
 jQuery(document).ready(function($) {
-  var width = $(document).width();
+  var width = $(window).width();
   var $idAnimate = $('#animate');
 
   function goRight() {
@@ -25,7 +25,6 @@ jQuery(document).ready(function($) {
         { left: 0 },
         500,
         function() {
-
           setTimeout(goRight, 50);
         }
       );
