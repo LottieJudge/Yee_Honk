@@ -12,7 +12,7 @@ function collisionDetection(hat, duck) {
   const hatCenterY = hat.y + hat.height / 2; 
 
   const headStart = duck.x + duck.width * 0.2;
-  const headEnd = duck.x + duck.width * 0.4;
+  const headEnd = duck.x + duck.width * 0.3;
 
   return (
     hatCenterX >= headStart &&
