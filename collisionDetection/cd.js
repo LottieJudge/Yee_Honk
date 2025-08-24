@@ -3,6 +3,9 @@
 const hatElem = document.querySelector('#animate img');
 const duckElem = document.getElementById('duck');
 
+let yeeHawVisible = false;
+let wompWompVisible = false;
+
 function getRect(elem) {
   return elem.getBoundingClientRect();
 }
@@ -24,13 +27,15 @@ function collisionDetection(hat, duck) {
 
 
 export function checkCollisionAndShow() {
-  console.log('Checking collision..')
   const hatRect = getRect(hatElem);
   const duckRect = getRect(duckElem);
+
   if (collisionDetection(hatRect, duckRect)) {
-    showYeeHaw();
+    if (!yeeHawVisible) showYeeHaw();
+    if (wompWompVisible) hideWompWomp();
   } else {
-    hideYeeHaw();
+    if (!wompWompVisible) showWompWomp();
+    if (yeeHawVisible) hideYeeHaw();
   }
 }
 
@@ -53,10 +58,38 @@ function showYeeHaw() {
   yeeHawVisible = true;
 }
 
+function showWompWomp() {
+  let wompWomp = document.getElementById('womp-womp');
+  if (!wompWomp) {
+    wompWomp = document.createElement('div');
+    wompWomp.id = 'womp-womp';
+    wompWomp.textContent = 'WOMP WOMP';
+    wompWomp.style.position = 'fixed';
+    wompWomp.style.top = '50%';
+    wompWomp.style.left = '50%';
+    wompWomp.style.transform = 'translate(-50%, -50%)';
+    wompWomp.style.fontSize = '8em';
+    wompWomp.style.color = '#fff';
+    wompWomp.style.zIndex = '1000';
+    document.body.appendChild(wompWomp);
+  }
+  wompWomp.onclick = hideWompWomp;
+  wompWompVisible = true;
+}
+
 function hideYeeHaw() {
   const yeeHaw = document.getElementById('yee-haw');
   if (yeeHaw) yeeHaw.remove();
   yeeHawVisible = false;
 }
 
+function hideWompWomp() {
+  const wompWomp = document.getElementById('womp-womp');
+  if (wompWomp) wompWomp.remove();
+  wompWompVisible = false;
+}
 
+document.addEventListener('click', function () {
+  if (yeeHawVisible) hideYeeHaw();
+  if (wompWompVisible) hideWompWomp();
+});
