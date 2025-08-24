@@ -50,7 +50,7 @@ function showYeeHaw() {
     yeeHaw.style.left = '50%';
     yeeHaw.style.transform = 'translate(-50%, -50%)';
     yeeHaw.style.fontSize = '8em';
-    yeeHaw.style.color = '#fff';
+    yeeHaw.style.color = '#ff13f0';
     yeeHaw.style.zIndex = '1000';
     document.body.appendChild(yeeHaw);
   }
@@ -69,7 +69,7 @@ function showWompWomp() {
     wompWomp.style.left = '50%';
     wompWomp.style.transform = 'translate(-50%, -50%)';
     wompWomp.style.fontSize = '8em';
-    wompWomp.style.color = '#fff';
+    wompWomp.style.color = '#35ff00';
     wompWomp.style.zIndex = '1000';
     document.body.appendChild(wompWomp);
   }
