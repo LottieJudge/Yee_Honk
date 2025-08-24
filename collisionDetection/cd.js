@@ -29,8 +29,11 @@ export function checkCollisionAndShow() {
   const duckRect = getRect(duckElem);
   if (collisionDetection(hatRect, duckRect)) {
     showYeeHaw();
+  } else if(!collisionDetection(hatRect, duckRect)){
+    showWompWomp();
   } else {
     hideYeeHaw();
+    hideWompWomp();
   }
 }
 
@@ -57,8 +60,8 @@ function showWompWomp() {
   let wompWomp = document.getElementById('womp-womp');
   if (!wompWomp) {
     wompWomp = document.createElement('div');
-    wompWomp.id = 'yee-haw';
-    wompWomp.textContent = 'YEE HAW';
+    wompWomp.id = 'womp-womp';
+    wompWomp.textContent = 'WOMP WOMP';
     wompWomp.style.position = 'fixed';
     wompWomp.style.top = '50%';
     wompWomp.style.left = '50%';
@@ -69,7 +72,7 @@ function showWompWomp() {
     document.body.appendChild(wompWomp);
   }
   wompWomp.onclick = hideWompWomp;
-  wompwWompVisible = true;
+  wompWompVisible = true;
 }
 
 function hideYeeHaw() {
@@ -79,9 +82,9 @@ function hideYeeHaw() {
 }
 
 function hideWompWomp() {
-  const yeeHaw = document.getElementById('womp-womp');
+  const wompWomp = document.getElementById('womp-womp');
   if (wompWomp) wompWomp.remove();
-  wompwWompVisible = false;
+  wompWompVisible = false;
 }
 
 
