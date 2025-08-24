@@ -3,6 +3,9 @@
 const hatElem = document.querySelector('#animate img');
 const duckElem = document.getElementById('duck');
 
+let yeeHawVisible = false;
+let wompWompVisible = false;
+
 function getRect(elem) {
   return elem.getBoundingClientRect();
 }
@@ -24,16 +27,15 @@ function collisionDetection(hat, duck) {
 
 
 export function checkCollisionAndShow() {
-  console.log('Checking collision..')
   const hatRect = getRect(hatElem);
   const duckRect = getRect(duckElem);
+
   if (collisionDetection(hatRect, duckRect)) {
-    showYeeHaw();
-  } else if(!collisionDetection(hatRect, duckRect)){
-    showWompWomp();
+    if (!yeeHawVisible) showYeeHaw();
+    if (wompWompVisible) hideWompWomp();
   } else {
-    hideYeeHaw();
-    hideWompWomp();
+    if (!wompWompVisible) showWompWomp();
+    if (yeeHawVisible) hideYeeHaw();
   }
 }
 
@@ -87,4 +89,7 @@ function hideWompWomp() {
   wompWompVisible = false;
 }
 
-
+document.addEventListener('click', function () {
+  if (yeeHawVisible) hideYeeHaw();
+  if (wompWompVisible) hideWompWomp();
+});
