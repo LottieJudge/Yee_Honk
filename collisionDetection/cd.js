@@ -53,10 +53,35 @@ function showYeeHaw() {
   yeeHawVisible = true;
 }
 
+function showWompWomp() {
+  let wompWomp = document.getElementById('womp-womp');
+  if (!wompWomp) {
+    wompWomp = document.createElement('div');
+    wompWomp.id = 'yee-haw';
+    wompWomp.textContent = 'YEE HAW';
+    wompWomp.style.position = 'fixed';
+    wompWomp.style.top = '50%';
+    wompWomp.style.left = '50%';
+    wompWomp.style.transform = 'translate(-50%, -50%)';
+    wompWomp.style.fontSize = '8em';
+    wompWomp.style.color = '#fff';
+    wompWomp.style.zIndex = '1000';
+    document.body.appendChild(wompWomp);
+  }
+  wompWomp.onclick = hideWompWomp;
+  wompwWompVisible = true;
+}
+
 function hideYeeHaw() {
   const yeeHaw = document.getElementById('yee-haw');
   if (yeeHaw) yeeHaw.remove();
   yeeHawVisible = false;
+}
+
+function hideWompWomp() {
+  const yeeHaw = document.getElementById('womp-womp');
+  if (wompWomp) wompWomp.remove();
+  wompwWompVisible = false;
 }
 
 
