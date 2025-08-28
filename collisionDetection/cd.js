@@ -5,6 +5,7 @@ const duckElem = document.getElementById('duck');
 
 let yeeHawVisible = false;
 let wompWompVisible = false;
+let score = 0
 
 function getRect(elem) {
   return elem.getBoundingClientRect();
