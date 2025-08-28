@@ -97,15 +97,18 @@ document.addEventListener('click', function () {
 
 function theScore(){
   let score = document.getElementById('score')
+  if(score === 0 ){
     score = document.createElement('div');
     score.id = 'score';
     score.textContent = scoreCount
     score.style.position = 'fixed';
-    score.style.top = '50%';
-    score.style.left = '50%';
-    score.style.transform = 'translate(-50%, -50%)';
+    score.style.top = '20px';
+    score.style.left = '30px';
     score.style.fontSize = '8em';
     score.style.color = '#ff13f0';
     score.style.zIndex = '1000';
     document.body.appendChild(score);
+  } else {
+    score.textContent = scoreCount + 1
+  }
 }
