@@ -106,7 +106,7 @@ function theScore(){
     score.style.position = 'fixed';
     score.style.top = '20px';
     score.style.right = '30px';
-    score.style.fontSize = '8em';
+    score.style.fontSize = '4em';
     score.style.color = '#ff13f0';
     score.style.zIndex = '1000';
     document.body.appendChild(score);
