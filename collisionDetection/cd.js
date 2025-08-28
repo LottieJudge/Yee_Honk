@@ -5,7 +5,7 @@ const duckElem = document.getElementById('duck');
 
 let yeeHawVisible = false;
 let wompWompVisible = false;
-let score = 0
+let scoreCount = 0
 
 function getRect(elem) {
   return elem.getBoundingClientRect();
@@ -94,3 +94,18 @@ document.addEventListener('click', function () {
   if (yeeHawVisible) hideYeeHaw();
   if (wompWompVisible) hideWompWomp();
 });
+
+function theScore(){
+  let score = document.getElementById('score')
+    score = document.createElement('div');
+    score.id = 'score';
+    score.textContent = scoreCount
+    score.style.position = 'fixed';
+    score.style.top = '50%';
+    score.style.left = '50%';
+    score.style.transform = 'translate(-50%, -50%)';
+    score.style.fontSize = '8em';
+    score.style.color = '#ff13f0';
+    score.style.zIndex = '1000';
+    document.body.appendChild(score);
+}
