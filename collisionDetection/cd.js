@@ -54,6 +54,8 @@ function showYeeHaw() {
     yeeHaw.style.color = '#ff13f0';
     yeeHaw.style.zIndex = '1000';
     document.body.appendChild(yeeHaw);
+    scoreCount++;
+    theScore();
   }
   yeeHaw.onclick = hideYeeHaw;
   yeeHawVisible = true;
@@ -97,18 +99,18 @@ document.addEventListener('click', function () {
 
 function theScore(){
   let score = document.getElementById('score')
-  if(score === 0 ){
+  if(!score){
     score = document.createElement('div');
     score.id = 'score';
     score.textContent = scoreCount
     score.style.position = 'fixed';
     score.style.top = '20px';
-    score.style.left = '30px';
+    score.style.right = '30px';
     score.style.fontSize = '8em';
     score.style.color = '#ff13f0';
     score.style.zIndex = '1000';
     document.body.appendChild(score);
   } else {
-    score.textContent = scoreCount + 1
+    score.textContent = scoreCount
   }
 }
