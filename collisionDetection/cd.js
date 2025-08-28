@@ -104,10 +104,11 @@ function theScore(){
     score.id = 'score';
     score.textContent = scoreCount
     score.style.position = 'fixed';
-    score.style.top = '20px';
+    score.style.top = '10px';
     score.style.right = '30px';
-    score.style.fontSize = '4em';
+    score.style.fontSize = '3em';
     score.style.color = '#ff13f0';
+    score.style.background = 'white'
     score.style.zIndex = '1000';
     document.body.appendChild(score);
   } else {
