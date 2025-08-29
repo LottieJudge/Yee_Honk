@@ -70,7 +70,7 @@ function showWompWomp() {
     wompWomp.style.top = '50%';
     wompWomp.style.left = '50%';
     wompWomp.style.transform = 'translate(-50%, -50%)';
-    wompWomp.style.fontSize = '50vw';
+    wompWomp.style.fontSize = '12em';
     wompWomp.style.color = '#35ff00';
     wompWomp.style.zIndex = '1000';
     document.body.appendChild(wompWomp);
