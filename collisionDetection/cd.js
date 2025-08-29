@@ -101,16 +101,14 @@ function theScore(){
   let score = document.getElementById('score')
   if(!score){
     score = document.createElement('div');
-    score.id = 'score';
-    score.style.fontFamily = 'Spartan', 'Montserrat', 'Futura', sans-serif;
+    score.id = 'score'; 
+    score.style.fontFamily = 'Spartan, Montserrat, Futura, sans-serif';
     score.textContent = `Score: ${scoreCount}`;
     score.style.position = 'fixed';
     score.style.top = '10px';
     score.style.right = '30px';
     score.style.fontSize = '3em';
-    score.style.color = '#ff13f0';
-    score.style.background = 'white'
-    score.style.width = '6vw'
+    score.style.color = '#35ff00';
     score.style.zIndex = '1000';
     document.body.appendChild(score);
   } else {
