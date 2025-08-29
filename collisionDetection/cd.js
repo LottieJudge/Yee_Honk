@@ -1,10 +1,10 @@
 // using getBounding to understand where the duck is 
-
 const hatElem = document.querySelector('#animate img');
 const duckElem = document.getElementById('duck');
 
 let yeeHawVisible = false;
 let wompWompVisible = false;
+let scoreCount = 0
 
 function getRect(elem) {
   return elem.getBoundingClientRect();
@@ -53,6 +53,8 @@ function showYeeHaw() {
     yeeHaw.style.color = '#ff13f0';
     yeeHaw.style.zIndex = '1000';
     document.body.appendChild(yeeHaw);
+    scoreCount++;
+    theScore();
   }
   yeeHaw.onclick = hideYeeHaw;
   yeeHawVisible = true;
@@ -93,3 +95,23 @@ document.addEventListener('click', function () {
   if (yeeHawVisible) hideYeeHaw();
   if (wompWompVisible) hideWompWomp();
 });
+
+function theScore(){
+  console.log('thescore')
+  let score = document.getElementById('score')
+  if(!score){
+    score = document.createElement('div');
+    score.id = 'score'; 
+    score.style.fontFamily = 'Spartan, Montserrat, Futura, sans-serif';
+    score.textContent = `Score: ${scoreCount}`;
+    score.style.position = 'fixed';
+    score.style.bottom = '10px';
+    score.style.right = '30px';
+    score.style.fontSize = '3em';
+    score.style.color = '#35ff00';
+    score.style.zIndex = '1000';
+    document.body.appendChild(score);
+  } else {
+    score.textContent = `Score: ${scoreCount}`
+  }
+}
