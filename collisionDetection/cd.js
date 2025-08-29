@@ -105,13 +105,13 @@ function theScore(){
     score.style.fontFamily = 'Spartan, Montserrat, Futura, sans-serif';
     score.textContent = `Score: ${scoreCount}`;
     score.style.position = 'fixed';
-    score.style.top = '10px';
+    score.style.bottom = '10px';
     score.style.right = '30px';
     score.style.fontSize = '3em';
     score.style.color = '#35ff00';
     score.style.zIndex = '1000';
     document.body.appendChild(score);
   } else {
-    score.textContent = scoreCount
+    score.textContent = `Score: ${scoreCount}`
   }
 }
