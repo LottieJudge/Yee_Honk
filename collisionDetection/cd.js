@@ -39,9 +39,8 @@ export function checkCollisionAndShow() {
   }
 }
 
-function showYeeHaw() {
-  let yeeHaw = document.getElementById('yee-haw');
-  if (!yeeHaw) {
+function popUp(id, text, color, onClick, incrementScore){
+  if id === 'yee-haw'{
     yeeHaw = document.createElement('div');
     yeeHaw.id = 'yee-haw';
     yeeHaw.textContent = 'YEE HAW';
@@ -49,12 +48,32 @@ function showYeeHaw() {
     yeeHaw.style.top = '50%';
     yeeHaw.style.left = '50%';
     yeeHaw.style.transform = 'translate(-50%, -50%)';
-    yeeHaw.style.fontSize = '8em';
+    yeeHaw.style.fontSize = '20vw';
     yeeHaw.style.color = '#ff13f0';
     yeeHaw.style.zIndex = '1000';
     document.body.appendChild(yeeHaw);
     scoreCount++;
     theScore();
+  } else if(id === 'womp-womp' ){
+    wompWomp = document.createElement('div');
+    wompWomp.id = 'womp-womp';
+    wompWomp.textContent = 'WOMP WOMP';
+    wompWomp.style.position = 'fixed';
+    wompWomp.style.top = '50%';
+    wompWomp.style.left = '50%';
+    wompWomp.style.transform = 'translate(-50%, -50%)';
+    wompWomp.style.fontSize = '20vw';
+    wompWomp.style.color = '#35ff00';
+    wompWomp.style.zIndex = '1000';
+    document.body.appendChild(wompWomp);
+  }
+
+}
+
+function showYeeHaw() {
+  let yeeHaw = document.getElementById('yee-haw');
+  if (!yeeHaw) {
+    popUp()
   }
   yeeHaw.onclick = hideYeeHaw;
   yeeHawVisible = true;
@@ -63,17 +82,7 @@ function showYeeHaw() {
 function showWompWomp() {
   let wompWomp = document.getElementById('womp-womp');
   if (!wompWomp) {
-    wompWomp = document.createElement('div');
-    wompWomp.id = 'womp-womp';
-    wompWomp.textContent = 'WOMP WOMP';
-    wompWomp.style.position = 'fixed';
-    wompWomp.style.top = '50%';
-    wompWomp.style.left = '50%';
-    wompWomp.style.transform = 'translate(-50%, -50%)';
-    wompWomp.style.fontSize = '8em';
-    wompWomp.style.color = '#35ff00';
-    wompWomp.style.zIndex = '1000';
-    document.body.appendChild(wompWomp);
+    
   }
   wompWomp.onclick = hideWompWomp;
   wompWompVisible = true;
