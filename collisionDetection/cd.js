@@ -40,13 +40,7 @@ export function checkCollisionAndShow() {
 }
 
 function popUp(id, text, color, onClick, incrementScore){
-  let popUpMessage = 
-
-}
-
-function showYeeHaw() {
-  let yeeHaw = document.getElementById('yee-haw');
-  if (!yeeHaw) {
+  if id === 'yee-haw'{
     yeeHaw = document.createElement('div');
     yeeHaw.id = 'yee-haw';
     yeeHaw.textContent = 'YEE HAW';
@@ -60,14 +54,7 @@ function showYeeHaw() {
     document.body.appendChild(yeeHaw);
     scoreCount++;
     theScore();
-  }
-  yeeHaw.onclick = hideYeeHaw;
-  yeeHawVisible = true;
-}
-
-function showWompWomp() {
-  let wompWomp = document.getElementById('womp-womp');
-  if (!wompWomp) {
+  } else if(id === 'womp-womp' ){
     wompWomp = document.createElement('div');
     wompWomp.id = 'womp-womp';
     wompWomp.textContent = 'WOMP WOMP';
@@ -79,6 +66,23 @@ function showWompWomp() {
     wompWomp.style.color = '#35ff00';
     wompWomp.style.zIndex = '1000';
     document.body.appendChild(wompWomp);
+  }
+
+}
+
+function showYeeHaw() {
+  let yeeHaw = document.getElementById('yee-haw');
+  if (!yeeHaw) {
+    popUp()
+  }
+  yeeHaw.onclick = hideYeeHaw;
+  yeeHawVisible = true;
+}
+
+function showWompWomp() {
+  let wompWomp = document.getElementById('womp-womp');
+  if (!wompWomp) {
+    
   }
   wompWomp.onclick = hideWompWomp;
   wompWompVisible = true;
