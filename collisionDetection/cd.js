@@ -39,6 +39,11 @@ export function checkCollisionAndShow() {
   }
 }
 
+function popUp(id, text, color, onClick, incrementScore){
+  let popUpMessage = 
+
+}
+
 function showYeeHaw() {
   let yeeHaw = document.getElementById('yee-haw');
   if (!yeeHaw) {
