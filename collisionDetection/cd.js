@@ -40,7 +40,17 @@ export function checkCollisionAndShow() {
 }
 
 function popUp(id, text, color, onClick, incrementScore){
-  if id === 'yee-haw'{
+  // I need to creatre a style and then append it deoending on the pop up 
+  // set the onlcik handler 
+  // and then updare the score and call it in the showYeehaw/wompwomp vibes 
+
+  }
+
+
+
+function showYeeHaw() {
+  let yeeHaw = document.getElementById('yee-haw');
+  if (!yeeHaw) {
     yeeHaw = document.createElement('div');
     yeeHaw.id = 'yee-haw';
     yeeHaw.textContent = 'YEE HAW';
@@ -54,7 +64,14 @@ function popUp(id, text, color, onClick, incrementScore){
     document.body.appendChild(yeeHaw);
     scoreCount++;
     theScore();
-  } else if(id === 'womp-womp' ){
+  }
+  yeeHaw.onclick = hideYeeHaw;
+  yeeHawVisible = true;
+}
+
+function showWompWomp() {
+  let wompWomp = document.getElementById('womp-womp');
+  if (!wompWomp) {
     wompWomp = document.createElement('div');
     wompWomp.id = 'womp-womp';
     wompWomp.textContent = 'WOMP WOMP';
@@ -66,23 +83,6 @@ function popUp(id, text, color, onClick, incrementScore){
     wompWomp.style.color = '#35ff00';
     wompWomp.style.zIndex = '1000';
     document.body.appendChild(wompWomp);
-  }
-
-}
-
-function showYeeHaw() {
-  let yeeHaw = document.getElementById('yee-haw');
-  if (!yeeHaw) {
-    popUp()
-  }
-  yeeHaw.onclick = hideYeeHaw;
-  yeeHawVisible = true;
-}
-
-function showWompWomp() {
-  let wompWomp = document.getElementById('womp-womp');
-  if (!wompWomp) {
-    
   }
   wompWomp.onclick = hideWompWomp;
   wompWompVisible = true;
